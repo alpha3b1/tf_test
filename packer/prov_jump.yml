@@ -1,0 +1,15 @@
+- hosts: default 
+  become: true
+  become_user: root
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  tasks:
+    - name: Install Net-Tools
+      package:
+        name: 'net-tools'
+        state: present
+
+    - name: Install iptraf
+      package:
+        name: 'iptraf'
+        state: present

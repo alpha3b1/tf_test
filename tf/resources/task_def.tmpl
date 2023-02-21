@@ -1,0 +1,24 @@
+[
+{
+  "image": "${ecr_url}/${image_name}:${image_tag}",
+  "name": "${container_name}",
+  "essential" : true,
+  "logConfiguration": {
+    "logDriver": "awslogs",
+    "options": {
+        "awslogs-create-group": "true",
+        "awslogs-group": "/aws/ecs/${task_name}",
+        "awslogs-region": "${region}",
+        "awslogs-stream-prefix": "${env}"
+    }
+   },
+  "networkMode": "awsvpc",
+  "portMappings": [
+        {
+          "containerPort": ${app_port},
+          "hostPort": ${app_port}
+        }
+      ],
+   "environment": ${environment}
+}
+]
