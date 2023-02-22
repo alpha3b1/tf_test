@@ -98,7 +98,7 @@ resource "aws_iam_policy" "task_role_policy" {
                 "s3:*",
                 "s3-object-lambda:*"
             ],
-            "Resource": "${aws_s3_bucket.this.arn}"
+            "Resource": "*"
         }
     ]
 }

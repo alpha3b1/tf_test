@@ -12,11 +12,6 @@ resource "aws_s3_bucket" "this" {
   # acl = "private"
   force_destroy = false
 
-#   lifecycle {
-#     ignore_changes = [
-#       logging, server_side_encryption_configuration
-#     ]
-#   }
 }
 
 resource "aws_s3_bucket_lifecycle_configuration" "this" {

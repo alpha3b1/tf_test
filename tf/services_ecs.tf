@@ -2,8 +2,6 @@ data "template_file" "env_vars" {
   template = file("resources/env_vars.json")
 
   vars = {
-    aws_access_key_id      = var.aws_access_key
-    aws_secret_access_key  = var.aws_secret_key
     aws_s3_bucket_name = aws_s3_bucket.this.id
   }
 }
